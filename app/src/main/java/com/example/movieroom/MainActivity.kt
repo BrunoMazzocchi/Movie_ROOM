@@ -1,7 +1,7 @@
 package com.example.movieroom
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.movieroom.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

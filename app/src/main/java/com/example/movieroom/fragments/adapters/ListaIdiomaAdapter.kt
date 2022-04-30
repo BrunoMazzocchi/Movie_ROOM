@@ -4,12 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.movieroom.bd.entities.GeneroEntity
 import com.example.movieroom.bd.entities.IdiomaEntity
-import com.example.movieroom.databinding.ListaGeneroBinding
 import com.example.movieroom.databinding.ListaIdiomaBinding
-import com.example.movieroom.fragments.lista.FragmentListaGeneroDirections
-import com.example.movieroom.fragments.lista.FragmentListaIdioma
 import com.example.movieroom.fragments.lista.FragmentListaIdiomaDirections
 
 class ListaIdiomaAdapter:

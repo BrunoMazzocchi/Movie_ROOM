@@ -6,12 +6,10 @@ import android.os.Bundle
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.movieroom.R
-import com.example.movieroom.bd.viewmodels.GeneroViewModels
 import com.example.movieroom.bd.viewmodels.IdiomaViewModels
 import com.example.movieroom.databinding.FragmentListaIdiomaBinding
 import com.example.movieroom.fragments.adapters.ListaIdiomaAdapter

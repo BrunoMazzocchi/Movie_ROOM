@@ -9,9 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.movieroom.R
-import com.example.movieroom.bd.entities.GeneroEntity
 import com.example.movieroom.bd.entities.IdiomaEntity
-import com.example.movieroom.bd.viewmodels.GeneroViewModels
 import com.example.movieroom.bd.viewmodels.IdiomaViewModels
 import com.example.movieroom.databinding.FragmentActualizarIdiomaBinding
 

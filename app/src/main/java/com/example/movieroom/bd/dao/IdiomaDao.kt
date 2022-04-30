@@ -2,7 +2,6 @@ package com.example.movieroom.bd.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.movieroom.bd.entities.GeneroEntity
 import com.example.movieroom.bd.entities.IdiomaEntity
 
 @Dao

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.movieroom.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/goToListaIdioma"
+            app:destination="@id/fragmentListaIdioma" />
+        <action
+            android:id="@+id/goToListaGenero"
+            app:destination="@id/fragmentListaGenero" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentListaIdioma"
+        android:name="com.example.movieroom.fragments.lista.FragmentListaIdioma"
+        android:label="fragment_lista_idioma"
+        tools:layout="@layout/fragment_lista_idioma" />
+    <fragment
+        android:id="@+id/fragmentListaGenero"
+        android:name="com.example.movieroom.fragments.lista.FragmentListaGenero"
+        android:label="fragment_lista_genero"
+        tools:layout="@layout/fragment_lista_genero" >
+        <action
+            android:id="@+id/addGenero"
+            app:destination="@id/fragmentAgregarGenero" />
+        <action
+            android:id="@+id/updateListaGenero"
+            app:destination="@id/fragmentActualizarGenero" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAgregarGenero"
+        android:name="com.example.movieroom.fragments.agregar.FragmentAgregarGenero"
+        android:label="fragment_agregar_genero"
+        tools:layout="@layout/fragment_agregar_genero" >
+        <argument
+            android:name="genero"
+            app:argType="com.example.movieroom.bd.entities.GeneroEntity" />
+        <action
+            android:id="@+id/goBackToGenero"
+            app:destination="@id/fragmentListaGenero" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentActualizarGenero"
+        android:name="com.example.movieroom.fragments.actualizar.FragmentActualizarGenero"
+        android:label="fragment_actualizar_genero"
+        tools:layout="@layout/fragment_actualizar_genero" >
+        <argument
+            android:name="genero"
+            app:argType="com.example.movieroom.bd.entities.GeneroEntity" />
+        <action
+            android:id="@+id/updateToListaGenero"
+            app:destination="@id/fragmentListaGenero" />
+    </fragment>
+</navigation>

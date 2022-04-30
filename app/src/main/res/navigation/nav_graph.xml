@@ -20,7 +20,14 @@
         android:id="@+id/fragmentListaIdioma"
         android:name="com.example.movieroom.fragments.lista.FragmentListaIdioma"
         android:label="fragment_lista_idioma"
-        tools:layout="@layout/fragment_lista_idioma" />
+        tools:layout="@layout/fragment_lista_idioma" >
+        <action
+            android:id="@+id/updateListaIdioma"
+            app:destination="@id/fragmentActualizarIdioma" />
+        <action
+            android:id="@+id/addIdioma"
+            app:destination="@id/fragmentAgregarIdioma" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentListaGenero"
         android:name="com.example.movieroom.fragments.lista.FragmentListaGenero"
@@ -56,5 +63,25 @@
         <action
             android:id="@+id/updateToListaGenero"
             app:destination="@id/fragmentListaGenero" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentActualizarIdioma"
+        android:name="com.example.movieroom.fragments.actualizar.FragmentActualizarIdioma"
+        android:label="fragment_actualizar_idioma"
+        tools:layout="@layout/fragment_actualizar_idioma" >
+        <argument
+            android:name="idioma"
+            app:argType="com.example.movieroom.bd.entities.IdiomaEntity" />
+        <action
+            android:id="@+id/updateToListaIdioma"
+            app:destination="@id/fragmentListaIdioma" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAgregarIdioma"
+        android:name="com.example.movieroom.fragments.agregar.FragmentAgregarIdioma"
+        android:label="FragmentAgregarIdioma" >
+        <action
+            android:id="@+id/goBackToIdioma"
+            app:destination="@id/fragmentListaIdioma" />
     </fragment>
 </navigation>

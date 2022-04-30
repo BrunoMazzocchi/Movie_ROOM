@@ -17,7 +17,7 @@
         >
 
         <TextView
-            android:id="@+id/TvIdGenero"
+            android:id="@+id/TvIdIdioma"
             android:layout_width="100dp"
             android:layout_height="30dp"
             android:text="0"
@@ -26,14 +26,14 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/TvNombreGenero"
+            android:id="@+id/TvNombreIdioma"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
-            android:layout_toEndOf="@id/TvIdGenero"
-            android:layout_toRightOf="@+id/TvIdGenero"
-            android:text="Genero"
+            android:layout_toEndOf="@id/TvIdIdioma"
+            android:layout_toRightOf="@+id/TvIdIdioma"
+            android:text="Idioma"
             android:textSize="20sp"
             android:textStyle="bold" />
     </RelativeLayout>

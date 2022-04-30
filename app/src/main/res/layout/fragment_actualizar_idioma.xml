@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.actualizar.FragmentActualizarGenero"
+    tools:context=".fragments.actualizar.FragmentActualizarIdioma"
     android:orientation="vertical">
 
     <TextView
@@ -12,13 +12,13 @@
         android:id="@+id/TvPlaceHolder"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Ingresar genero:"
+        android:text="Ingresar idioma:"
         android:textSize="20sp"
         android:layout_gravity="center"
         />
 
     <EditText
-        android:id="@+id/TvNombreGenero"
+        android:id="@+id/TvNombreIdioma"
         android:layout_width="300dp"
         android:layout_gravity="center"
         android:inputType="text"
@@ -31,7 +31,7 @@
         android:layout_gravity="center"
 
         android:layout_height="wrap_content"
-        android:text="Actualizar Genero"
+        android:text="Actualizar Idioma"
 
         />
 

@@ -16,7 +16,7 @@ import com.example.movieroom.bd.viewmodels.GeneroViewModels
 import com.example.movieroom.databinding.FragmentListaGeneroBinding
 
 class FragmentListaGenero : Fragment() {
-    lateinit var vBinding: FragmentListaGeneroBinding
+    lateinit var binding: FragmentListaGeneroBinding
 
     private lateinit var viewModel: GeneroViewModels
 
@@ -24,20 +24,20 @@ class FragmentListaGenero : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        vBinding = FragmentListaGeneroBinding.inflate(inflater, container, false)
+        binding = FragmentListaGeneroBinding.inflate(inflater, container, false)
 
         val adapter = ListaGeneroAdapter()
-        val recycleView = vBinding.RcvListaGenero
+        val recyclerView = binding.RcvListaGenero
 
-        recycleView.adapter = adapter
-        recycleView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         viewModel = ViewModelProvider(this).get(GeneroViewModels::class.java)
         viewModel.lista.observe(viewLifecycleOwner, Observer { gen -> adapter.setData(gen) })
 
         setHasOptionsMenu(true)
 
-        return vBinding.root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -46,7 +46,7 @@ class FragmentListaGenero : Fragment() {
     }
 
     private fun setupViews() {
-        with(vBinding){
+        with(binding){
             BtnAgregar.setOnClickListener {
                 it.findNavController().navigate(R.id.addGenero)
             }

@@ -1,61 +1,87 @@
 
 package com.example.movieroom.fragments.lista
 
+import android.app.AlertDialog
 import android.os.Bundle
+import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.movieroom.R
+import com.example.movieroom.bd.viewmodels.GeneroViewModels
+import com.example.movieroom.bd.viewmodels.IdiomaViewModels
+import com.example.movieroom.databinding.FragmentListaIdiomaBinding
+import com.example.movieroom.fragments.adapters.ListaIdiomaAdapter
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [FragmentListaIdioma.newInstance] factory method to
- * create an instance of this fragment.
- */
 class FragmentListaIdioma : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    lateinit var binding: FragmentListaIdiomaBinding
+    private lateinit var viewModels: IdiomaViewModels
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentListaIdiomaBinding.inflate(inflater, container, false)
+        val adapter = ListaIdiomaAdapter()
+        val recyclerView = binding.RcvListaIdioma
+
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        viewModels = ViewModelProvider(this).get(IdiomaViewModels::class.java)
+        viewModels.lista.observe(viewLifecycleOwner, {gen -> adapter.setData(gen) })
+
+        setHasOptionsMenu(true)
+        return binding.root
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?){
+        super.onViewCreated(view, savedInstanceState)
+        setupViews()
+    }
+    private fun setupViews(){
+        with(binding){
+            BtnAgregar.setOnClickListener{
+                it.findNavController().navigate(R.id.addIdioma)
+            }
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_lista_idioma, container, false)
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.delete_menu, menu)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FragmentListaIdioma.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FragmentListaIdioma().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.menuEliminar){
+            eliminarTodo()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun eliminarTodo(){
+        val alerta = AlertDialog.Builder(requireContext())
+        alerta.setPositiveButton("Si") { _, _ ->
+            viewModels.eliminarTodo()
+            Toast.makeText(
+                requireContext(),
+                "Registros eliminados satisfactoriamente...",
+                Toast.LENGTH_LONG
+            ).show()
+        }
+        alerta.setNegativeButton("No") { _, _ ->
+            Toast.makeText(
+                requireContext(),
+                "Operación cancelada...",
+                Toast.LENGTH_LONG
+            ).show()
+        }
+        alerta.setTitle("Eliminando todos los registro")
+        alerta.setMessage("¿Esta seguro de eliminar los registros?")
+        alerta.create().show()
     }
 }

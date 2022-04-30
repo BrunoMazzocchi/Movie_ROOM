@@ -8,6 +8,7 @@
         <entry key="..\:/Users/Bemaz/AndroidStudioProjects/MovieRoom/app/src/main/res/drawable-v24/ic_movie_24.xml" value="0.1" />
         <entry key="..\:/Users/Bemaz/AndroidStudioProjects/MovieRoom/app/src/main/res/layout/activity_main.xml" value="0.17603850050658562" />
         <entry key="..\:/Users/Bemaz/AndroidStudioProjects/MovieRoom/app/src/main/res/layout/fragment_actualizar_genero.xml" value="0.2259963768115942" />
+        <entry key="..\:/Users/Bemaz/AndroidStudioProjects/MovieRoom/app/src/main/res/layout/fragment_actualizar_idioma.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/Bemaz/AndroidStudioProjects/MovieRoom/app/src/main/res/layout/fragment_agregar_genero.xml" value="0.1" />
         <entry key="..\:/Users/Bemaz/AndroidStudioProjects/MovieRoom/app/src/main/res/layout/fragment_agregar_idioma.xml" value="0.1" />
         <entry key="..\:/Users/Bemaz/AndroidStudioProjects/MovieRoom/app/src/main/res/layout/fragment_lista_genero.xml" value="0.2" />
@@ -15,6 +16,7 @@
         <entry key="..\:/Users/Bemaz/AndroidStudioProjects/MovieRoom/app/src/main/res/layout/fragment_main.xml" value="0.18" />
         <entry key="..\:/Users/Bemaz/AndroidStudioProjects/MovieRoom/app/src/main/res/layout/item_genero.xml" value="0.1" />
         <entry key="..\:/Users/Bemaz/AndroidStudioProjects/MovieRoom/app/src/main/res/layout/lista_genero.xml" value="0.18432971014492755" />
+        <entry key="..\:/Users/Bemaz/AndroidStudioProjects/MovieRoom/app/src/main/res/layout/lista_idioma.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/Bemaz/AndroidStudioProjects/MovieRoom/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2833333333333333" />
         <entry key="..\:/Users/Bemaz/AndroidStudioProjects/MovieRoom/app/src/main/res/menu/delete_menu.xml" value="0.1" />
       </map>
